@@ -1,0 +1,40 @@
+{
+    "name": "panelssh/laravel-shared",
+    "description": "Panel SSH - Laravel Shared",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Panel SSH",
+            "role": "Software Developer",
+            "email": "panelssh@hotmail.com",
+            "homepage": "https://panelssh.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "illuminate/database": "^8.77",
+        "illuminate/support": "^8.77",
+        "panelssh/laravel-core": "dev-main",
+        "symfony/http-kernel": "^5.4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "PanelSsh\\Shared\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PanelSsh\\Shared\\SharedServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
