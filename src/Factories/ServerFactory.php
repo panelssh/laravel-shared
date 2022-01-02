@@ -34,7 +34,7 @@ class ServerFactory extends Factory
             'country_id_ext' => $country->id_ext,
             'country_name' => $country->name,
             'country_slug' => $country->slug,
-            'city_name' => $this->faker->city,
+            'city_name' => $this->faker->city(),
             'limit_daily' => $this->faker->numberBetween(30, 50),
             'limit_monthly' => $this->faker->numberBetween(1000, 1500),
             'limit_total' => $this->faker->numberBetween(20000, 30000),
