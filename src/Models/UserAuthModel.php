@@ -30,8 +30,6 @@ class UserAuthModel extends Model
 
     protected $table = 'user_auth';
 
-    protected $with = ['profile'];
-
     protected $fillable = [
         'id_ext',
         'email',
