@@ -13,8 +13,8 @@ class CreateAccountTable extends Migration
             $table->char('id_ext', 21)->unique();
             $table->string('username')->index();
             $table->text('password');
-            $table->unsignedBigInteger('user_id');
-            $table->char('user_id_ext', 21);
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->char('user_id_ext', 21)->nullable();
             $table->unsignedBigInteger('server_id');
             $table->char('server_id_ext', 21);
             $table->string('server_name');
