@@ -36,7 +36,7 @@ class CreateServerTable extends Migration
             $table->integer('limit_monthly');
             $table->integer('limit_total');
             $table->integer('active_day');
-            $table->text('payload');
+            $table->text('payload')->nullable();
             $table->boolean('is_active')->default(false);
             $table->timestamp('created_at')->nullable();
             $table->json('created_by')->nullable();
