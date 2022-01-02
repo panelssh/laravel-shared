@@ -16,7 +16,6 @@ class CreateAccountTable extends Migration
             $table->char('user_id', 21)->nullable();
             $table->string('user_id_ext')->nullable();
             $table->unsignedBigInteger('server_id');
-            $table->string('server_slug');
             $table->char('server_id_ext', 21);
             $table->string('server_name');
             $table->string('server_slug');
