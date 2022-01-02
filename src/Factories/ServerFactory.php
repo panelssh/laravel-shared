@@ -17,12 +17,12 @@ class ServerFactory extends Factory
         $serverType = ServerTypeModel::active()->inRandomOrder()->first();
 
         /** @var CountryModel $country */
-        $country = CountryModel::query()->inRandomOrder()->first();
+        $country = CountryModel::active()->inRandomOrder()->first();
 
         return [
-            'slug' => $this->faker->slug,
-            'name' => "{$country->iso_3166_2} - {$country->name}",
-            'ip_address' => $this->faker->ipv4,
+            'slug' => $this->faker->slug(),
+            'name' => "$country->iso_3166_2 - $country->name",
+            'ip_address' => $this->faker->ipv4(),
             'username' => 'root',
             'password' => 'password',
             'port' => 22,
@@ -39,7 +39,7 @@ class ServerFactory extends Factory
             'limit_monthly' => $this->faker->numberBetween(1000, 1500),
             'limit_total' => $this->faker->numberBetween(20000, 30000),
             'active_day' => $this->faker->numberBetween(3, 5),
-            'is_active' => $this->faker->boolean,
+            'is_active' => $this->faker->boolean(),
         ];
     }
 }

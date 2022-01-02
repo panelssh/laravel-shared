@@ -24,7 +24,7 @@ class AccountFactory extends Factory
         $server = ServerModel::active()->inRandomOrder()->first();
 
         return [
-            'username' => $this->faker->userName,
+            'username' => $this->faker->userName(),
             'password' => 'password',
             'server_id' => $server->id,
             'server_id_ext' => $server->id_ext,
@@ -42,7 +42,7 @@ class AccountFactory extends Factory
             'expired_at' => $expiredAt = $this->faker->dateTimeBetween('-1 years', '+1 years'),
             'created_at' => Carbon::parse($expiredAt)->subDays(3),
             'created_by' => [],
-            'updated_at' => Carbon::parse($expiredAt)->subDays(1),
+            'updated_at' => Carbon::parse($expiredAt)->subDays(),
             'updated_by' => [],
             'is_active' => Carbon::parse($expiredAt)->gte(Carbon::now()),
         ];

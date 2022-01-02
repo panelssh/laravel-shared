@@ -15,9 +15,9 @@ class UserAuthFactory extends Factory
     {
         return [
             'id_ext' => nanoid(),
-            'email' => $this->faker->unique()->safeEmail,
+            'email' => $this->faker->unique()->safeEmail(),
             'password' => Hash::make('password'),
-            'is_active' => $this->faker->boolean,
+            'is_active' => $this->faker->boolean(),
             'last_seen_at' => Carbon::now(),
             'last_login_at' => Carbon::now(),
             'email_verified_at' => Carbon::now(),
@@ -32,8 +32,8 @@ class UserAuthFactory extends Factory
             return $userAuth->profile()->create([
                 'id_ext' => $userAuth->id_ext,
                 'email' => $userAuth->email,
-                'first_name' => $this->faker->firstName,
-                'last_name' => $this->faker->lastName,
+                'first_name' => $this->faker->firstName(),
+                'last_name' => $this->faker->lastName(),
                 'avatar_image' => $this->faker->imageUrl(200, 200),
                 'created_at' => Carbon::now(),
                 'created_by' => [],
